@@ -48,6 +48,10 @@ router.post('/save',upload.single('Picture'),(req,res)=>{
     });
 });
 
+router.delete('/deleteproduct/:pid', function (req,res){
+    something.findByIdAndDelete(req.params.pid)
+})
+
 //get single products or items by id
 router.patch('/product/:productId',upload.single('imageFile'),(req, res) => {
     // We want to upload a image in a product specified by productId
